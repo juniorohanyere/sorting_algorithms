@@ -32,23 +32,20 @@ void swap(int *a, int *b)
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min;
+	int *min;
+	size_t i, j;
 
 	for (i = 0; i < size - 1; i++)
 	{
-		min = i;
-
+		min = array + i;
 		for (j = i + 1; j < size; j++)
 		{
-			if (array[j] < array[min])
-			{
-				min = j;
-			}
+			if (array[j] < *min)
+				min = array + j;
 		}
-
-		if (array[i] != array[min])
+		if ((array + i) != min)
 		{
-			swap(&array[i], &array[min]);
+			swap(array + i, min);
 			print_array(array, size);
 		}
 	}
