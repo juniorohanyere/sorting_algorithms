@@ -3,7 +3,7 @@
 #include "sort.h"
 
 /**
- * swap - swaps two integers in an array
+ * swap - swaps two integers in an       array
  *
  * @a: the first integer
  * @b: the second integer
